@@ -10,10 +10,10 @@ const Home = () => {
             <div className="container mt-5">
                 <h1>Home</h1>
                 {currentUser ? (
-                    <p>You are logged in - <link to="/dashboard">View Dashboard</link></p>
+                    <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
                 ) : (
                     <p>
-                        <link to="/login">Log in</link> or <link to="/signup">Sign up</link>
+                        <Link to="/login">Log in</Link> or <Link to="/signup">Sign up</Link>
                     </p>
                 )}
             </div>
