@@ -1,30 +1,33 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
+import { AuthContext } from './auth'
 import firebaseConfig from '../config'
 
-const Signup =  () => {
-    const [currentUser, setCurrentUser] = useState(null);
+const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const { email, password } = e.target.elements;
 
         try {
-            firebaseConfig.auth().createUserWithEmailAndPassword(email.value, password.value);
-            setCurrentUser(true);
 
-        } catch(error) {
-            alert(error)
+            firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
+
+        }catch(error){
+            alert(error);
         }
-
-        if (currentUser){
-            return <Redirect to="/dashboard" />
-        }
-
     }
+
+    const { currentUser } = useContext(AuthContext);
+    if (currentUser){
+        return <Redirect to='/dashboard' />
+    }
+
+
     return (
         <>
-            <h1>Sign Up</h1>
+            <h1>Log in</h1>
             <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label for="exampleInputEmail1" className="form-label">Email address</label>
@@ -41,4 +44,4 @@ const Signup =  () => {
     )
 }
 
-export default Signup;
+export default Login;
