@@ -27,6 +27,7 @@ const Login = () => {
 
     return (
         <>
+            <div className='container mt-5'>
             <h1>Log in</h1>
             <form onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -40,6 +41,7 @@ const Login = () => {
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+            </div>
         </>
     )
 }

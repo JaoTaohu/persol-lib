@@ -13,7 +13,7 @@ const Home = () => {
                     <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
                 ) : (
                     <p>
-                        <Link to="/login">Log in</Link> or <Link to="/signup">Sign up</Link>
+                        <Link to="/login" className='btn btn-primary'>Log in</Link> or <Link to="/signup" className='btn btn-success'>Sign up</Link>
                     </p>
                 )}
             </div>

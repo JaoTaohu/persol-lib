@@ -24,6 +24,7 @@ const Signup =  () => {
     }
     return (
         <>
+            <div className='container mt-5'>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -37,6 +38,8 @@ const Signup =  () => {
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+            </div>
+            
         </>
     )
 }
