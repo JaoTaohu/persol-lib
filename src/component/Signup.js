@@ -18,7 +18,7 @@ const Signup =  () => {
         }
 
         if (currentUser){
-            return <Redirect to="/dashboard" />
+            return Redirect("/dashboard");
         }
 
     }
@@ -36,7 +36,7 @@ const Signup =  () => {
                 <label for="exampleInputPassword1" className="form-label">Password</label>
                 <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary" >Submit</button>
             </form>
             </div>
             
