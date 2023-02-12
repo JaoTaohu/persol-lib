@@ -1,17 +1,19 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './auth'
+import '../App.css'
+import { useHistory } from 'react-router-dom'
 
 const Home = () => {
     const { currentUser } = useContext(AuthContext);
-
+    const Navigate = useHistory();
     return (
         <>
-            <div className="container mt-5">
+            <div className="container">
                 <h1>Home</h1>
-                {currentUser ? (
-                    <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
-                ) : (
+                {currentUser ? (                   
+                    Navigate.push("/lib")
+                ) : (                  
                     <p>
                         <Link to="/login" className='btn btn-primary'>Log in</Link> or <Link to="/signup" className='btn btn-success'>Sign up</Link>
                     </p>

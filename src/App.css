@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
@@ -36,3 +36,60 @@
     transform: rotate(360deg);
   }
 }
+
+.Libcontainer{
+  position: relative;
+  background-color: #6b9cff;
+  height: 100vh;
+
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: #333;
+  overflow: hidden;
+  padding: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+.post{
+
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  background-color: aquamarine;
+
+}
+
+/* .container{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+} */
