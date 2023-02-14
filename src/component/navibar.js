@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import '../App.css'
 import firebaseConfig from '../config'
+import { Link } from 'react-router-dom'
 
 const Navibar = () => {
     return (
         <>
         <nav>
             <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
+            <li><Link to="/" >Home</Link></li>
+            <li><Link to="/Addpic" >Add</Link></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#about">About</a></li>
             </ul>

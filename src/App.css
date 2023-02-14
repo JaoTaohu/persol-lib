@@ -83,9 +83,29 @@ ul {
 
   align-items: center;
   padding: 20px;
-  height: 100vh;
-  background-color: aquamarine;
+  height: auto;
+  background-color: rgb(255, 233, 199);
 
+}
+
+.container_add{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  width: 500px;
+  height: 600px;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  background-color: bisque;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* .container{
