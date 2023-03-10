@@ -4,6 +4,7 @@ import '../App.css'
 import { Redirect } from 'react-router-dom'
 import Navibar from './navibar'
 import Post from './post'
+import Upload from './Upload'
 
 const Lib = () => {
     const { currentUser } = useContext(AuthContext);
@@ -11,15 +12,13 @@ const Lib = () => {
     if (!currentUser){
         return Redirect('/login');
     }
-    return (
+    return (      
         <>
             <div className='Libcontainer'>
-                <Navibar />   
-            <div className='showpost'>
-                <Post />
-            </div>    
-            </div>      
-        </>
+                <Navibar /> 
+                <Post />  
+            </div>              
+        </> 
     )
 }
 

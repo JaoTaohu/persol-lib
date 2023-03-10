@@ -1,18 +1,19 @@
 import React, { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
 import { AuthContext } from './auth'
-import firebaseConfig from '../config'
+import { auth } from '../config'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login = () => {
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const { email, password } = e.target.elements;
 
         try {
 
-            firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
+            await signInWithEmailAndPassword(auth, email.value, password.value);
 
         }catch(error){
             alert(error);

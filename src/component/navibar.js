@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../App.css'
-import firebaseConfig from '../config'
+import { auth } from '../config'
 import { Link } from 'react-router-dom'
+import { signOut } from 'firebase/auth'
 
 const Navibar = () => {
     return (
@@ -9,9 +10,9 @@ const Navibar = () => {
         <nav>
             <ul>
             <li><Link to="/" >Home</Link></li>
-            <li><Link to="/Addpic" >Add</Link></li>
+            <li><Link to="/upload" >Add</Link></li>
             </ul>
-            <button onClick={() => firebaseConfig.auth().signOut()} class='btn btn-danger'>Sign Out</button> 
+            <button onClick={() => signOut(auth)} class='btn btn-danger'>Sign Out</button> 
         </nav>             
         </>
     )

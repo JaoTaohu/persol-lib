@@ -38,10 +38,10 @@
 }
 
 .Libcontainer{
-  position: relative;
-  background-color: #6b9cff;
-  height: 100vh;
-
+  position: absolute;
+  background-color: #6b9cff ;
+  display: flex;
+  
 }
 
 nav{
@@ -108,8 +108,6 @@ ul {
   gap: 10px;
 }
 
-/* .container{
-  align-items: center;
-  justify-content: center;
-  display: flex;
-} */
+.App{
+  margin-top: 100px;
+}
