@@ -3,16 +3,18 @@ import '../App.css'
 import { useRef, useEffect, useState } from 'react';
 import { storage } from '../config';
 import { ref, uploadBytes, listAll, getDownloadURL, deleteObject } from 'firebase/storage';
-
-
+import { AuthContext } from './auth';
+import { v4 as uuid} from 'uuid'
 
 
 const Post = () => {
     const [img, setImg] = useState(null);
     const [imgList, setImgList] = useState([]);
     const imgListRef = useRef([]);
+    const { currentUser } = useContext(AuthContext)
+
     useEffect(() => {
-        const imagesRef = ref(storage, 'pony/');
+        const imagesRef = ref(storage, `${currentUser.uid}/`);
         listAll(imagesRef)
           .then((res) => Promise.all(res.items.map((item) => getDownloadURL(item))))
           .then((urls) => {

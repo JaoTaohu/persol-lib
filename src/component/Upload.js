@@ -1,8 +1,9 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useContext } from 'react';
 import { storage } from '../config';
 import { ref, uploadBytes, listAll, getDownloadURL, deleteObject } from 'firebase/storage';
-import { v4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 import { useHistory } from 'react-router-dom';
+import { AuthContext } from './auth';
 
 
 function Upload() {
@@ -10,10 +11,11 @@ function Upload() {
   const [imgList, setImgList] = useState([]);
   const imgListRef = useRef([]);
   const history = useHistory();
+  const { currentUser } = useContext(AuthContext)
 
   const uploadImage = () => {
     if (img == null) return;
-    const imgRef = ref(storage, `pony/${img.name + v4()}`);
+    const imgRef = ref(storage,`${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         imgListRef.current.unshift(url); // Add the new image to the beginning of the list
@@ -26,7 +28,7 @@ function Upload() {
   };
 
   useEffect(() => {
-    const imagesRef = ref(storage, 'pony/');
+    const imagesRef = ref(storage, `${currentUser.uid}/`);
     listAll(imagesRef)
       .then((res) => Promise.all(res.items.map((item) => getDownloadURL(item))))
       .then((urls) => {
@@ -56,7 +58,6 @@ function Upload() {
   return (
     <div className="App">
       <input type='file' onChange={(event) => {setImg(event.target.files[0])}}/>
-      
       <button onClick={uploadImage} >Upload image</button>
       {imgList.map((url) => {
         return (
