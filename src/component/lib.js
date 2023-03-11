@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AuthContext } from './auth'
-import '../App.css'
+import '../css/App.css'
 import { Redirect } from 'react-router-dom'
 import Navibar from './navibar'
 import Post from './post'

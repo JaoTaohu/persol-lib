@@ -1,31 +1,24 @@
 import React, { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
 import { AuthContext } from './auth'
-import { auth } from '../config'
+import { auth } from '../Firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const { email, password } = e.target.elements;
-
         try {
-
             await signInWithEmailAndPassword(auth, email.value, password.value);
-
         }catch(error){
             alert(error);
         }
     }
-
     const { currentUser } = useContext(AuthContext);
     if (currentUser){
         return Redirect('/dashboard');
     }
-
-
     return (
         <>
             <div class='home' className='container mt-5'>

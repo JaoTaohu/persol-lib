@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import {auth} from '../config'
+import {auth} from '../Firebase'
 
 const Signup = () => {
     const [currentUser, setCurrentUser] = useState(null);
@@ -15,16 +15,13 @@ const Signup = () => {
             await createUserWithEmailAndPassword(auth, email.value, password.value);
             setCurrentUser(true);
             setRedirectToDashboard(true);
-
         } catch(error) {
             alert(error)
         }
     }
-
     if (redirectToDashboard) {
         return <Redirect to="/lib" />;
     }
-
     return (
         <>
             <div class='home' className='container mt-5'>

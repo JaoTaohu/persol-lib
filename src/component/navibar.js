@@ -1,6 +1,6 @@
 import React from 'react'
-import '../App.css'
-import { auth } from '../config'
+import '../css/App.css'
+import { auth } from '../Firebase'
 import { Link } from 'react-router-dom'
 import { signOut } from 'firebase/auth'
 

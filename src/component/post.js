@@ -1,14 +1,12 @@
 import React, { useContext } from 'react'
-import '../App.css'
+import '../css/App.css'
 import { useRef, useEffect, useState } from 'react';
-import { storage } from '../config';
-import { ref, uploadBytes, listAll, getDownloadURL, deleteObject } from 'firebase/storage';
+import { storage } from '../Firebase';
+import { ref, listAll, getDownloadURL, deleteObject } from 'firebase/storage';
 import { AuthContext } from './auth';
-import { v4 as uuid} from 'uuid'
 
 
 const Post = () => {
-    const [img, setImg] = useState(null);
     const [imgList, setImgList] = useState([]);
     const imgListRef = useRef([]);
     const { currentUser } = useContext(AuthContext)

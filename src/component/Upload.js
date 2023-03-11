@@ -1,8 +1,8 @@
 import { useRef, useState, useContext } from 'react';
-import { storage } from '../config';
+import { storage } from '../Firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { AuthContext } from './auth';
 
 
@@ -10,23 +10,26 @@ function Upload() {
   const [img, setImg] = useState(null);
   const [imgList, setImgList] = useState([]);
   const imgListRef = useRef([]);
-  const history = useHistory();
   const { currentUser } = useContext(AuthContext);
   const [previewUrl, setPreviewUrl] = useState(null);
+  const [loadimg, setLoad] = useState(false);
 
   const uploadImage = () => {
     if (img == null) return;
-    const imgRef = ref(storage,`${currentUser.uid}/${img.name + uuid()}`);
+    const imgRef = ref(storage,`${currentUser.uid}/${uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         imgListRef.current.unshift(url); // Add the new image to the beginning of the list
         setImgList([...imgListRef.current]); // Update the state with a new copy of the list
-        history.push("/lib")
+        setLoad(true);
       });
     });
     setImg(null);
     setPreviewUrl(null);
   };
+  if (loadimg) {
+    return <Redirect to="/lib" />;
+}
 
   const handleImgChange = (event) => {
     const file = event.target.files[0];
