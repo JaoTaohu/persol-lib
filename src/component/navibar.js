@@ -10,7 +10,8 @@ const Navibar = () => {
         <nav>
             <ul>
             <li><Link to="/" >Home</Link></li>
-            <li><Link to="/upload" >Add</Link></li>
+            <li><Link to="/upload" >Upload</Link></li>
+            <li><Link to="/favourite" >Favourite</Link></li>
             </ul>
             <button onClick={() => signOut(auth)} class='btn btn-danger'>Sign Out</button> 
         </nav>             

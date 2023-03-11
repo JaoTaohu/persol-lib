@@ -4,10 +4,10 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
 import { Redirect, useHistory } from 'react-router-dom';
 import { AuthContext } from './auth';
-import Navibar from './navibar'
+import Navibar from './navibar';
 
 
-function Upload() {
+function Fav() {
   const [img, setImg] = useState(null);
   const [imgList, setImgList] = useState([]);
   const imgListRef = useRef([]);
@@ -18,7 +18,7 @@ function Upload() {
 
   const uploadImage = () => {
     if (img == null) return;
-    const imgRef = ref(storage,`${currentUser.uid}/${img.name + uuid()}`);
+    const imgRef = ref(storage,`favourite${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         imgListRef.current.unshift(url); // Add the new image to the beginning of the list
@@ -41,6 +41,7 @@ function Upload() {
   return (
     <div className='container'>
         <Navibar />
+    
     <div className="Upload">
       {previewUrl && <img src={previewUrl} alt="Preview" style={{ maxWidth: '40%', height: 'auto' }}/>}
       <input type='file' onChange={handleImgChange}/>
@@ -50,4 +51,4 @@ function Upload() {
   );
 }
 
-export default Upload;
+export default Fav;

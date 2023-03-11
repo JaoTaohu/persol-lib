@@ -1,47 +1,23 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.container{
   align-items: center;
+  background-color: #6b9cff ;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: rgb(255, 255, 255);
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  height: 100vh;
+  overflow: hidden;
 }
 
 .Libcontainer{
-  position: absolute;
-  background-color: #6b9cff ;
+  align-items: center;
+  background-color: #e0ce9b ;
   display: flex;
-  
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.Libcontainer img{
+  border-radius: 4px;
 }
 
 nav{
@@ -62,8 +38,7 @@ ul {
     padding: 0;
     
   }
-
-
+  
   li {
     float: left;
   }
@@ -79,14 +54,7 @@ ul {
   li a:hover:not(.active) {
     background-color: #111;
   }
-.post{
 
-  align-items: center;
-  padding: 20px;
-  height: auto;
-  background-color: rgb(255, 233, 199);
-
-}
 
 .container_add{
   height: 100vh;
@@ -110,5 +78,25 @@ ul {
 
 .App{
   margin-top: 100px;
-  
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
+
+.App img{
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.fav img{ 
+  background-color: rgb(255, 206, 82);
+  padding: 5px;
+}
+
+.Upload{
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+

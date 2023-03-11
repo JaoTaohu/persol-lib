@@ -22,7 +22,7 @@ const Home = () => {
     }, [])
     return (
         <>
-            <div className="container">
+            <div className="authen">
                 <h1>Home</h1>
                 {currentUser ? (                   
                     Navigate.push("/lib")

@@ -5,7 +5,8 @@ import Login from "./component/Login";
 import Signup from "./component/Signup";
 import { AuthProvider } from "./component/auth";
 import Lib from './component/lib'
-import Pre from "./component/preview";
+import Fav from "./component/Favourite";
+import Upload from "./component/Upload";
 
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/upload' component={Pre} />
+          <Route exact path='/upload' component={Upload} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/lib' component={Lib} />
+          <Route exact path='/favourite' component={Fav} />
         </Switch>
       </Router>
     </AuthProvider>
