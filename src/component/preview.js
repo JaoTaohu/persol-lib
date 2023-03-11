@@ -3,9 +3,9 @@ import { AuthContext } from './auth'
 import '../App.css'
 import { Redirect } from 'react-router-dom'
 import Navibar from './navibar'
-import Post from './post'
+import Upload from './Upload'
 
-const Lib = () => {
+const Pre = () => {
     const { currentUser } = useContext(AuthContext);
 
     if (!currentUser){
@@ -15,10 +15,10 @@ const Lib = () => {
         <>
             <div className='Libcontainer'>
                 <Navibar /> 
-                <Post />  
+                <Upload />  
             </div>              
         </> 
     )
 }
 
-export default Lib;
+export default Pre;
