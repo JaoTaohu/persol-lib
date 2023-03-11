@@ -10,25 +10,27 @@ const Post = () => {
     const [imgList, setImgList] = useState([]);
     const imgListRef = useRef([]);
     const { currentUser } = useContext(AuthContext)
+    
 
     useEffect(() => {
-        const imagesRef = ref(storage, `${currentUser.uid}/`);
-        listAll(imagesRef)
-          .then((res) => Promise.all(res.items.map((item) => getDownloadURL(item))))
-          .then((urls) => {
-            const sortedUrls = urls.sort((url1, url2) => {
-              // Sort in descending order of upload time
-              const index1 = url1.indexOf('?time=');
-              const index2 = url2.indexOf('?time=');
-              const time1 = parseInt(url1.substring(index1 + 6), 10);
-              const time2 = parseInt(url2.substring(index2 + 6), 10);
-              return time2 - time1;
-            });
-            imgListRef.current = sortedUrls; // Set the initial state of the list to the sorted URLs
-            setImgList(sortedUrls);
-          })
-          .catch((error) => console.log(error));
-      }, []);
+      const imagesRef = ref(storage, `${currentUser.uid}/`);
+      listAll(imagesRef)
+        .then((res) => Promise.all(res.items.map((item) => getDownloadURL(item))))
+        .then((urls) => {
+          const sortedUrls = urls.sort((url1, url2) => {
+            // Sort in descending order of upload time
+            const index1 = url1.indexOf('?time=');
+            const index2 = url2.indexOf('?time=');
+            const time1 = parseInt(url1.substring(index1 + 6), 10);
+            const time2 = parseInt(url2.substring(index2 + 6), 10);
+            return time2 - time1;
+          });
+          imgListRef.current = sortedUrls; // Set the initial state of the list to the sorted URLs
+          setImgList(sortedUrls.reverse()); // Set the initial state of the list to the reversed array of sorted URLs
+        })
+        .catch((error) => console.log(error));
+    }, []);
+    
     
       const deleteImage = (url) => {
         const imgRef = ref(storage, url);

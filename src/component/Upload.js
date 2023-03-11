@@ -10,13 +10,14 @@ function Upload() {
   const [img, setImg] = useState(null);
   const [imgList, setImgList] = useState([]);
   const imgListRef = useRef([]);
+  const history = useHistory();
   const { currentUser } = useContext(AuthContext);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [loadimg, setLoad] = useState(false);
 
   const uploadImage = () => {
     if (img == null) return;
-    const imgRef = ref(storage,`${currentUser.uid}/${uuid()}`);
+    const imgRef = ref(storage,`${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         imgListRef.current.unshift(url); // Add the new image to the beginning of the list
@@ -28,9 +29,8 @@ function Upload() {
     setPreviewUrl(null);
   };
   if (loadimg) {
-    return <Redirect to="/lib" />;
+     return <Redirect to="/lib" />;
 }
-
   const handleImgChange = (event) => {
     const file = event.target.files[0];
     setImg(file);
