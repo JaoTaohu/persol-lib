@@ -4,6 +4,7 @@ import { AuthContext } from './auth'
 import '../css/App.css'
 import { useHistory } from 'react-router-dom'
 import { gapi } from 'gapi-script'
+import img from '../css/home.jpg'
 
 const Home = () => {
     const { currentUser } = useContext(AuthContext);
@@ -21,18 +22,21 @@ const Home = () => {
       gapi.load("client:auth2", initClient)
     }, [])
     return (
-        <>
+        <div className='Auth'>
             <div className="authen">
-                <h1>Home</h1>
+                <h1>Welcome to Your Gallery!</h1>
                 {currentUser ? (                   
                     Navigate.push("/lib")
-                ) : (                  
+                ) : (     
+                  <div className='btn2'>         
                     <p>
-                        <Link to="/login" className='btn btn-primary'>Log in</Link> or <Link to="/signup" className='btn btn-success'>Sign up</Link>                                             
-                    </p>                                     
+                        <Link to="/login" className='btn btn-primary' style={{marginBottom: "10px"}}>Log in</Link>  
+                        <Link to="/signup" className='btn btn-success'>Sign up</Link>                                             
+                    </p> 
+                  </div>                                     
                 )}
             </div>           
-        </>
+        </div>
     )
 }
 

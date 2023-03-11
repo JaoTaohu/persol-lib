@@ -1,6 +1,15 @@
-.container{
+.containerup{
   align-items: center;
-  background-color: #6b9cff ;
+  background-color: #ff6b6b ;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.containerfav{
+  align-items: center;
+  background-color: #fad046 ;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -8,16 +17,17 @@
 }
 
 .Libcontainer{
-  align-items: center;
-  background-color: #e0ce9b ;
+  background-color: #e0ce9b;
   display: flex;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
-}
+  overflow: auto;
+  text-align: center;
+  }
 
 .Libcontainer img{
-  border-radius: 4px;
+  border-radius: 10px;
+  margin: 10px;
 }
 
 nav{
@@ -80,16 +90,16 @@ ul {
   margin-top: 100px;
   align-items: center;
   justify-content: center;
-  display: flex;
+  overflow: hidden;
+  
 }
 
-.App img{
-  margin: 10px;
+.App img{ 
   border-radius: 4px;
 }
 
 .fav img{ 
-  background-color: rgb(255, 206, 82);
+  background-color: #ff6b6b;
   padding: 5px;
 }
 
@@ -97,6 +107,74 @@ ul {
   margin-top: 100px;
   align-items: center;
   justify-content: center;
-  display: flex;
+  display: flex; 
 }
+
+.Post{
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Auth {
+  background-image: linear-gradient(to bottom left,#b8e282, #86d103, #256903) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+}
+
+.Login{
+  background-image: linear-gradient(to bottom left,#50bafc, #1769cc, #033b69) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+}
+
+.Signup{
+  background-image: linear-gradient(to bottom left,#bd97ff, #a326d0, #4c0f62) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+}
+
+.authen {
+  background-color: rgba(154, 213, 234, 0.674);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+
+.authen h1 {
+  margin-bottom: 20px;
+}
+
+.authen p {
+  margin-top: 20px;
+}
+
+.authen .btn {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.logo{
+  text-align: center;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn2{
+  
+}
+  
 

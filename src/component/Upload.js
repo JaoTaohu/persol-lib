@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { Redirect, useHistory } from 'react-router-dom';
 import { AuthContext } from './auth';
 import Navibar from './navibar'
+import imgg from '../css/imgg.jpg'
 
 
 function Upload() {
@@ -14,7 +15,8 @@ function Upload() {
   const history = useHistory();
   const { currentUser } = useContext(AuthContext);
   const [previewUrl, setPreviewUrl] = useState(null);
-  const [loadimg, setLoad] = useState(false);
+  const [loadimg, setLoad] = useState(false)
+  const [nonshow, setnonshow] = useState(true)
 
   const uploadImage = () => {
     if (img == null) return;
@@ -36,17 +38,28 @@ function Upload() {
     const file = event.target.files[0];
     setImg(file);
     setPreviewUrl(URL.createObjectURL(file));
+    setnonshow(false);
   };
 
   return (
-    <div className='container'>
-        <Navibar />
-    <div className="Upload">
-      {previewUrl && <img src={previewUrl} alt="Preview" style={{ maxWidth: '40%', height: 'auto' }}/>}
-      <input type='file' onChange={handleImgChange}/>
-      <button onClick={uploadImage} >Upload image</button>
-    </div>
-    </div>
+    <>
+      <Navibar />
+      <div className='containerup'>
+        
+        <div className="Upload">
+           <input style={{display: "none" }}type='file' id='file' onChange={handleImgChange}/>
+            <label htmlFor='file'>
+              {nonshow && <img src={imgg} style={{ maxWidth: '500px', maxheight: '500px', borderRadius: '10px'}}/>}
+              {previewUrl && <img src={previewUrl} alt="Preview" style={{ maxWidth: '600px', maxheight: '600px', borderRadius: '10px' }}/>}
+            </label>
+            <div className='btn'>
+              <button onClick={uploadImage} >Upload image</button>
+            </div>
+        </div>
+      </div>
+    </>
+    
+    
   );
 }
 

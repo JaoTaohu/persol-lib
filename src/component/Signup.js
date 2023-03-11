@@ -23,9 +23,11 @@ const Signup = () => {
         return <Redirect to="/lib" />;
     }
     return (
-        <>
-            <div class='home' className='container mt-5'>
+        <div className='Signup'>
+            <div className='authen'>
+                <div class='logo'>
                 <h1>Sign Up</h1>
+                </div>          
                 <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -36,10 +38,12 @@ const Signup = () => {
                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                     <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
                 </div>
+                <div class='btn'>
                 <button type="submit" className="btn btn-primary" >Submit</button>
+                </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -13,8 +13,8 @@ const Lib = () => {
     }
     return (      
         <>
-            <div className='Libcontainer'>
-                <Navibar /> 
+            <Navibar /> 
+            <div className='Libcontainer'>   
                 <Post />  
             </div>              
         </> 

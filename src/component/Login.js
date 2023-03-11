@@ -20,9 +20,11 @@ const Login = () => {
         return Redirect('/dashboard');
     }
     return (
-        <>
-            <div class='home' className='container mt-5'>
-                <h1>Log in</h1>
+        <div className='Login'>
+            <div className='authen'>
+                <div class='logo'>
+                    <h1>Log in</h1>
+                </div>
                 <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Email address</label>
@@ -33,10 +35,12 @@ const Login = () => {
                     <label for="exampleInputPassword1" className="form-label">Password</label>
                     <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
                 </div>
-                <button type="submit" className="btn btn-primary" >Submit</button>
+                <div class='btn'>
+                    <button type="submit" className="btn btn-primary" >Submit</button>
+                </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

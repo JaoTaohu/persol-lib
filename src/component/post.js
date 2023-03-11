@@ -69,7 +69,7 @@ const Post = () => {
         });
       };
     return (
-        <div className='App'>
+        <div className='Post'>
           <div className='fav'>
             {imgListFav.map((url) => {
               return (
@@ -80,14 +80,16 @@ const Post = () => {
               );
             })}
           </div>
-          {imgList.map((url) => {
-              return (
-                <div key={url}>
-                  <img src={url} style={{ maxWidth: '40%', height: 'auto' }} />
-                  <button onClick={() => deleteImage(url)}>Delete</button>
-                </div>
-              );
-          })}
+          <div className='normal'>
+            {imgList.map((url) => {
+                return (
+                  <div key={url}>
+                    <img src={url} style={{ Width: '400px', height: 'auto' }} />
+                    <button onClick={() => deleteImage(url)}>Delete</button>
+                  </div>
+                );
+            })}
+          </div>
         </div>
     )
 }
