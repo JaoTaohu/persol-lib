@@ -4,7 +4,7 @@ import { AuthContext } from './auth'
 import { auth } from '../Firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
-const Login = () => {
+const Signin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,4 +44,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default Signin;
