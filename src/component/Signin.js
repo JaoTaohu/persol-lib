@@ -23,7 +23,7 @@ const Login = () => {
         <div className='Login'>
             <div className='authen'>
                 <div class='logo'>
-                    <h1>Log in</h1>
+                    <h1>Sign in</h1>
                 </div>
                 <form onSubmit={handleSubmit}>
                 <div className="mb-3">

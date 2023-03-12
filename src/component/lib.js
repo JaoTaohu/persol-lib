@@ -9,7 +9,7 @@ const Lib = () => {
     const { currentUser } = useContext(AuthContext);
 
     if (!currentUser){
-        return Redirect('/login');
+        return Redirect('/signin');
     }
     return (      
         <>

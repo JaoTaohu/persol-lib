@@ -29,7 +29,7 @@ const Home = () => {
                 ) : (     
                   <div className='btn2'>         
                     <p>
-                        <Link to="/login" class="btn btn-outline-dark" style={{marginBottom: "10px"}}>Log in</Link>  
+                        <Link to="/signin" class="btn btn-outline-dark" style={{marginBottom: "10px"}}>Sign in</Link>  
                         <Link to="/signup" class="btn btn-outline-dark">Sign up</Link>                                             
                     </p> 
                   </div>                                     
