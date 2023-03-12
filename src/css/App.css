@@ -1,6 +1,6 @@
 .containerup{
   align-items: center;
-  background-color: #ff6b6b ;
+  background-image: linear-gradient(to bottom left,#f2f755, #e8797d, #c2fb78) ;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -9,7 +9,7 @@
 
 .containerfav{
   align-items: center;
-  background-color: #fad046 ;
+  background-image: linear-gradient(to top,#5891e7, #d07aff, #a4f9ff) ;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -17,7 +17,7 @@
 }
 
 .Libcontainer{
-  background-color: #e0ce9b;
+  background-image: linear-gradient(to bottom,#cefbc3, #c4f79c, #91dfa2) ;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -101,8 +101,8 @@ ul {
 .fav img{ 
   background-color: #fdf598;
   box-shadow: 
-    0 0 15px 8px rgb(254, 251, 108), /* middle magenta */
-    0 0 18px 10px rgb(255, 225, 0);
+  inset 60px 0 120px #f0f,  /* left magenta */
+  inset -60px 0 120px #0ff; /* right cyan */
   padding: 5px;
 }
 
@@ -120,7 +120,10 @@ ul {
 }
 
 .Auth {
-  background-image: linear-gradient(to bottom left,#b8e282, #86d103, #256903) ;
+  background-image:url(bg2.jpg) ;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,7 +132,10 @@ ul {
 }
 
 .Login{
-  background-image: linear-gradient(to bottom left,#50bafc, #1769cc, #033b69) ;
+  background-image:url(bg2.jpg) ;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +144,10 @@ ul {
 }
 
 .Signup{
-  background-image: linear-gradient(to bottom left,#bd97ff, #a326d0, #4c0f62) ;
+  background-image:url(bg2.jpg) ;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +156,7 @@ ul {
 }
 
 .authen {
-  background-color: rgba(154, 213, 234, 0.674);
+  background-color: rgba(255, 255, 255, 0.827);
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -176,8 +185,8 @@ ul {
   text-align: center;
 }
 
-.btn2{
-  
+h1{
+  font-family: 'Rubik Iso', cursive;
 }
   
 

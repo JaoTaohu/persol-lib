@@ -74,8 +74,10 @@ const Post = () => {
             {imgListFav.map((url) => {
               return (
                 <div key={url}>
-                  <img src={url} style={{ Width: '400px', height: 'auto' }} />
-                  <button onClick={() => deleteFav(url)}>Delete</button>
+                  <img src={url} style={{ maxWidth: '400px', height: 'auto' }} />
+                  <div className='btn'>
+                    <button class="btn btn-outline-dark" onClick={() => deleteFav(url)}>Delete</button>
+                  </div>
                 </div>
               );
             })}
@@ -84,8 +86,10 @@ const Post = () => {
             {imgList.map((url) => {
                 return (
                   <div key={url}>
-                    <img src={url} style={{ Width: '400px', height: 'auto' }} />
-                    <button onClick={() => deleteImage(url)}>Delete</button>
+                    <img src={url} style={{ maxWidth: '400px', height: 'auto' }} />
+                    <div className='btn'>
+                      <button class="btn btn-outline-dark" onClick={() => deleteImage(url)}>Delete</button>
+                    </div>
                   </div>
                 );
             })}

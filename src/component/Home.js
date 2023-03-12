@@ -4,7 +4,6 @@ import { AuthContext } from './auth'
 import '../css/App.css'
 import { useHistory } from 'react-router-dom'
 import { gapi } from 'gapi-script'
-import img from '../css/home.jpg'
 
 const Home = () => {
     const { currentUser } = useContext(AuthContext);
@@ -30,8 +29,8 @@ const Home = () => {
                 ) : (     
                   <div className='btn2'>         
                     <p>
-                        <Link to="/login" className='btn btn-primary' style={{marginBottom: "10px"}}>Log in</Link>  
-                        <Link to="/signup" className='btn btn-success'>Sign up</Link>                                             
+                        <Link to="/login" class="btn btn-outline-dark" style={{marginBottom: "10px"}}>Log in</Link>  
+                        <Link to="/signup" class="btn btn-outline-dark">Sign up</Link>                                             
                     </p> 
                   </div>                                     
                 )}
