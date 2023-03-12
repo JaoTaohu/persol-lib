@@ -17,7 +17,7 @@
 }
 
 .Libcontainer{
-  background-image: linear-gradient(to bottom,#cefbc3, #c4f79c, #91dfa2) ;
+  background-image: linear-gradient(to bottom,#f8fbf7, #9cf7dd, #d0df91) ;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -101,9 +101,9 @@ ul {
 .fav img{ 
   background-color: #fdf598;
   box-shadow: 
-  inset 60px 0 120px #f0f,  /* left magenta */
-  inset -60px 0 120px #0ff; /* right cyan */
-  padding: 5px;
+  inset 60px 0 0px rgb(93, 0, 255),
+  inset -60px 0 0px #0ff; 
+  padding: 7px;
 }
 
 .Upload{

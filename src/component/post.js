@@ -26,13 +26,14 @@ const Post = () => {
             return time2 - time1;
           });
           imgListRef.current = sortedUrls; 
-          setImgList(sortedUrls.reverse()); 
+          setImgList(sortedUrls.reverse());
+           
         })
         .catch((error) => console.log(error));
     }, []);
 
     useEffect(() => {
-      const imagesRefFav = ref(storage, `favourite${currentUser.uid}/`);
+      const imagesRefFav = ref(storage, `favourite-${currentUser.uid}/`);
       listAll(imagesRefFav)
         .then((res) => Promise.all(res.items.map((item) => getDownloadURL(item))))
         .then((urls) => {
@@ -45,6 +46,7 @@ const Post = () => {
           });
           imgListRefFav.current = sortedUrls; 
           setImgListFav(sortedUrls.reverse()); 
+          
         })
         .catch((error) => console.log(error));
     }, []);
@@ -64,6 +66,7 @@ const Post = () => {
           const updatedImgList = imgList.filter((imgUrl) => imgUrl !== url);
           imgListRef.current = updatedImgList;
           setImgList(updatedImgList);
+          
         });
       };
     return (

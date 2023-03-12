@@ -19,7 +19,7 @@ function Fav() {
 
   const uploadImage = () => {
     if (img == null) return;
-    const imgRef = ref(storage,`favourite/${currentUser.uid}/${img.name + uuid()}`);
+    const imgRef = ref(storage,`favourite-${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         imgListRef.current.unshift(url); 
@@ -49,12 +49,16 @@ function Fav() {
             <label htmlFor='file'>
               {nonshow && <img src={imgg} style={{ maxWidth: '300px', maxheight: '300px', borderRadius: '10px'}}/>}
               {previewUrl && <img src={previewUrl} alt="Preview" style={{ maxWidth: '600px', maxheight: '600px', borderRadius: '10px' }}/>}
+              <div style={{color: "#ffffff"}}>
+                <p>* หมายเหตุ *<br></br>รูปที่ upload จาก function นี้จะมีกรอบสี</p>
+              </div>
             </label>
             <div className='btn'>
               <button class="btn btn-outline-light" onClick={uploadImage} >Upload image</button>
             </div>
             </div>
         </div>
+        
     </>
     
   );
