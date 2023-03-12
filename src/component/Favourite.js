@@ -19,7 +19,7 @@ function Fav() {
 
   const uploadImage = () => {
     if (img == null) return;
-    const imgRef = ref(storage,`favourite${currentUser.uid}/${img.name + uuid()}`);
+    const imgRef = ref(storage,`favourite/${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         imgListRef.current.unshift(url); 
