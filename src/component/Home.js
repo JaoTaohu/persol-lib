@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <div className='Auth'>
             <div className="authen">
-                <h1>Welcome to Your Gallery!</h1>
+                <h1>=MeMoLapse=</h1>
                 {currentUser ? (                   
                     Navigate.push("/lib")
                 ) : (     

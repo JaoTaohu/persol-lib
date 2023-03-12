@@ -22,8 +22,8 @@ function Fav() {
     const imgRef = ref(storage,`favourite${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
-        imgListRef.current.unshift(url); // Add the new image to the beginning of the list
-        setImgList([...imgListRef.current]); // Update the state with a new copy of the list
+        imgListRef.current.unshift(url); 
+        setImgList([...imgListRef.current]); 
         setLoad(true);
       });
     });

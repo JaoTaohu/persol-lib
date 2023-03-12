@@ -2,7 +2,7 @@ import { useRef, useState, useContext } from 'react';
 import { storage } from '../Firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { AuthContext } from './auth';
 import Navibar from './navibar'
 import imgg from '../css/imgg.jpg'
@@ -12,7 +12,6 @@ function Upload() {
   const [img, setImg] = useState(null);
   const [imgList, setImgList] = useState([]);
   const imgListRef = useRef([]);
-  const history = useHistory();
   const { currentUser } = useContext(AuthContext);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [loadimg, setLoad] = useState(false)
@@ -23,8 +22,8 @@ function Upload() {
     const imgRef = ref(storage,`${currentUser.uid}/${img.name + uuid()}`);
     uploadBytes(imgRef, img).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
-        imgListRef.current.unshift(url); // Add the new image to the beginning of the list
-        setImgList([...imgListRef.current]); // Update the state with a new copy of the list
+        imgListRef.current.unshift(url); 
+        setImgList([...imgListRef.current]);
         setLoad(true);
       });
     });
