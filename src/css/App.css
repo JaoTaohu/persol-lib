@@ -99,7 +99,10 @@ ul {
 }
 
 .fav img{ 
-  background-color: #ff6b6b;
+  background-color: #fdf598;
+  box-shadow: 
+    0 0 15px 8px rgb(254, 251, 108), /* middle magenta */
+    0 0 18px 10px rgb(255, 225, 0);
   padding: 5px;
 }
 

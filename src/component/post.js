@@ -74,7 +74,7 @@ const Post = () => {
             {imgListFav.map((url) => {
               return (
                 <div key={url}>
-                  <img src={url} style={{ maxWidth: '40%', height: 'auto' }} />
+                  <img src={url} style={{ Width: '400px', height: 'auto' }} />
                   <button onClick={() => deleteFav(url)}>Delete</button>
                 </div>
               );
