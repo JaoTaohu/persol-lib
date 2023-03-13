@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useEffect, useState } from 'react'
 import '../css/App.css'
-import { useRef, useEffect, useState } from 'react';
 import { storage } from '../Firebase';
 import { ref, listAll, getDownloadURL, deleteObject } from 'firebase/storage';
 import { AuthContext } from './auth';
@@ -26,8 +25,7 @@ const Post = () => {
             return time2 - time1;
           });
           imgListRef.current = sortedUrls; 
-          setImgList(sortedUrls.reverse());
-           
+          setImgList(sortedUrls.reverse());           
         })
         .catch((error) => console.log(error));
     }, []);
@@ -37,12 +35,12 @@ const Post = () => {
       listAll(imagesRefFav)
         .then((res) => Promise.all(res.items.map((item) => getDownloadURL(item))))
         .then((urls) => {
-          const sortedUrls = urls.sort((url1, url2) => {
-            const index1 = url1.indexOf('?time=');
-            const index2 = url2.indexOf('?time=');
-            const time1 = parseInt(url1.substring(index1 + 6), 10);
-            const time2 = parseInt(url2.substring(index2 + 6), 10);
-            return time2 - time1;
+          const sortedUrls = urls.sort((url3, url4) => {
+            const index3 = url3.indexOf('?time=');
+            const index4 = url4.indexOf('?time=');
+            const time3 = parseInt(url3.substring(index3 + 6), 10);
+            const time4 = parseInt(url4.substring(index4 + 6), 10);
+            return time4 - time3;
           });
           imgListRefFav.current = sortedUrls; 
           setImgListFav(sortedUrls.reverse()); 
@@ -100,3 +98,4 @@ const Post = () => {
 }
 
 export default Post;
+
